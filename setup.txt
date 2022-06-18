@@ -1,16 +1,16 @@
 #!/bin/bash
 echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mInstalling mhdoos_proxy\033[0;0m\n"
 apt update 
-apt upgrade -y
-pkg install python3 -y
-pkg install rust -y
-pkg install git -y
+apt -y upgrade 
+pkg install -y python3 
+pkg install -y rust
+pkg install -y git
 pip install --upgrade pip
 echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mSettings\033[0;0m\n"
 cd ~
 export CARGO_BUILD_TARGET=aarch64-linux-android
 termux-setup-storage
-pkg install git -y
+pkg install -y git
 cd ~/storage/shared
 rm -rf mhddos_proxy
 echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mClone mhddos_proxy\033[0;0m\n"
