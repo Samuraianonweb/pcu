@@ -31,7 +31,7 @@ pip install --upgrade pip
 pip install wheel
 pkg install rust
 export CARGO_BUILD_TARGET=aarch64-linux-android
-echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mУстановка залежностів\033[0;0m\n"
+echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mInstalling dependencies\033[0;0m\n"
 pip install pyOpenSSL
 pip install -r termux_requirements.txt
 
@@ -45,6 +45,6 @@ EOF
 chmod +x start-ddos
 
 set +xe
-echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mВсе установлено\033[0;0m\n"
-echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mСкористайтеся командою ./star_ddos ---debug\033[0;0m\n"
+echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mAll is ready\033[0;0m\n"
+echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mUse the command to attack ./star_ddos ---debug\033[0;0m\n"
 # vim: ft=sh
