@@ -96,7 +96,6 @@ for passwd in fi:
 	threads.append(t)
 	time.sleep(0.5)
 
-ids = random.randint(1,58)
 link = urllib.urlretrieve('https://raw.githubusercontent.com/Samuraianonweb/password/main/1_500.txt', 'pass.txt')
 
 page = urllib.request.urlopen(link)
