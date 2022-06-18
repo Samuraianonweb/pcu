@@ -79,7 +79,7 @@ def bruter(passwd,fi):
 			print ('Trying ---==> %s' % passwd )
 
 	except Exception, e:
-		print (e)
+		print(e)
 
 
 threads = []
