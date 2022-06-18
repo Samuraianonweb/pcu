@@ -88,7 +88,7 @@ cj = cookielib.CookieJar()
 coder = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
 
 
-	fi = id.read().splitlines()
+	fi = page.read().splitlines()
 
 for passwd in fi:
 	t = threading.Thread(target=bruter, args=(passwd,fi))
