@@ -1,8 +1,11 @@
 #!/bin/bash
 echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mInstalling mhdoos_proxy\033[0;0m\n"
 set -xe
-apt update && apt upgrade -y
-pkg install python3 -y && pkg install rust -y && pkg install git -y
+apt update 
+apt upgrade -y
+pkg install python3 -y
+pkg install rust -y
+pkg install git -y
 pip install --upgrade pip
 echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mSettings\033[0;0m\n"
 cd ~
