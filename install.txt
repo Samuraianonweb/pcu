@@ -20,7 +20,7 @@ EOF
 # cat > "${SOURCES_FILE}" <<EOF
 # deb ${MAIN} x11 main
 # EOF
-echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mКлоную mddos_proxy\033[0;0m\n"
+echo -e "\n[\033[1;32m$(date +"%d-%m-%Y %T")\033[1;0m] - \033[0;33mCloning mddos_proxy\033[0;0m\n"
 apt update
 apt upgrade -y -o Dpkg::Options::=--force-confnew
 apt install -y python git
